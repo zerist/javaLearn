@@ -11,7 +11,7 @@
 //        输出
 //        复制
 //        无
-//        说明
+//        说明    不能使用set
 import java.util.Arrays;
 public class Stamp {
     public static void main(String[] args){
