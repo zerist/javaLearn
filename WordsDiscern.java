@@ -23,7 +23,9 @@
 //        through:1
 //        to:1
 //        which:1
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 public class WordsDiscern {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
@@ -49,11 +51,17 @@ public class WordsDiscern {
             }
         }
 
-
+        TreeMap<String, Integer> map = new TreeMap<String, Integer>();
         for(int i=0; i<1000; i++){
             if(numArray[i] != 0){
-                System.out.printf("%s:%d\n", tmpArray[i], numArray[i]);
+                if(tmpArray[i].length() != 0){  //清除空字符串
+                    map.put(tmpArray[i], numArray[i]);
+                }
+                //System.out.printf("%s:%d\n", tmpArray[i], numArray[i]);
             }
+        }
+        for(Map.Entry<String, Integer> e : map.entrySet()){
+            System.out.printf("%s:%d\n", e.getKey(), e.getValue());
         }
     }
 }
