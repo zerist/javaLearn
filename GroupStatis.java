@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class Main {
+public class GroupStatis {
     public static void main(String[] args) {
         Scanner scn=new Scanner(System.in);
         int m=scn.nextInt();
