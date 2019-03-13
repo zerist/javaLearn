@@ -28,7 +28,7 @@ public class CCF20181202 {
                 if (k == 3) {
                     left = (r + y + g - t + tmp) % (r + y + g);
                 }
-                if (left <= (r + y + g) && left >= (r + y)) {
+                if (left <= (r + y + g) && left >= (r + y) || left == 0) {
                     sum += 0;
                 } else {
                     sum += r + y - left;
