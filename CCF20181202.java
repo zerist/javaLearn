@@ -3,20 +3,19 @@ import java.util.Scanner;
 public class CCF20181202 {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
+        Long r,y,g, n;
+        r = input.nextLong();
+        y = input.nextLong();
+        g = input.nextLong();
+        n = input.nextLong();
 
-        int r,y,g, n;
-        r = input.nextInt();
-        y = input.nextInt();
-        g = input.nextInt();
-        n = input.nextInt();
-
-        int sum = 0;
+        Long sum = 0l;
         for(int i=0; i<n; i++){
-            int k, t;
-            int tmp = sum;
-            int left = 0;
-            k = input.nextInt();
-            t = input.nextInt();
+            Long k, t;
+            Long tmp = sum;
+            Long left = 0l;
+            k = input.nextLong();
+            t = input.nextLong();
             if(k == 0){
                 sum += t;
             }else {
