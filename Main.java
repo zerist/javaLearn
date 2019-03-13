@@ -1,88 +1,41 @@
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scn=new Scanner(System.in);
-        int m=scn.nextInt();
-        for (int i = 0; i < m; i++) {
-            int n=scn.nextInt();
+        Scanner input = new Scanner(System.in);
 
-            //样例数据
-            int [] number=new int[n];
-            //分组信息数据
-            int [] group=new int[n];
+        int r, g, y;
+        int n;
 
-            //不重复的数据集合
-            Set<Integer> numberset=new TreeSet<Integer>();
+        r = input.nextInt();
+        g = input.nextInt();
+        y = input.nextInt();
+        n = input.nextInt();
 
-            Set<Integer> groupset=new TreeSet<Integer>();
-            //输入数据
+        int[] rst = new int[n];
+        for(int i=0; i<n; i++){
+            int k, t;
+            k = input.nextInt();
+            t = input.nextInt();
 
-            for (int j = 0; j < number.length; j++) {
-                int value=scn.nextInt();
-                number[j]=value;
-
-                numberset.add(value);
+            if(k == 0){
+                rst[i] = t;
             }
-
-            for (int j = 0; j < number.length; j++) {
-                int value=scn.nextInt();
-                group[j]=value;
-                groupset.add(value);
+            if(k == 1){
+                rst[i] = t;
             }
-            Map<Integer,Map<Integer,Integer>> groupInfo = new TreeMap<>();
-
-            //初始化分组信息
-            for (Integer v : groupset) {
-                for (Integer nv : numberset) {
-                    if(groupInfo.containsKey(v))
-                    {
-                        Map<Integer,Integer> map=groupInfo.get(v);
-                        map.put(nv,0);
-                    }else
-                    {
-                        Map<Integer,Integer> map=new TreeMap<Integer,Integer>();
-                        map.put(nv, 0);
-                        groupInfo.put(v, map);
-                    }
-
-                }
+            if(k == 2){
+                rst[i] = t + r;
             }
-
-            for (int j = 0; j < n; j++) {
-
-                int key=group[j];
-                int value=number[j];
-                Map<Integer,Integer> mmap=groupInfo.get(key);
-                int f=mmap.get(value);
-                mmap.put(value,f+1);
+            if(k == 3){
+                rst[i] = 0;
             }
-
-            for(Integer gno : groupset)
-            {
-                StringBuilder sb = new StringBuilder(gno+"="+"{");
-                Map<Integer,Integer> map = groupInfo.get(gno);
-                for(Integer num : numberset)
-                {
-                    sb.append(num+"="+map.get(num)+",");
-                }
-                String str = sb.toString();
-                System.out.println(str.substring(0,str.length()-1)+"}");
-            }
-
-
-
-
-
         }
-
-
-
-
+        int sum = 0;
+        for(int i=0; i<n; i++){
+            sum += rst[i];
+        }
+        System.out.println(sum);
     }
 
 }

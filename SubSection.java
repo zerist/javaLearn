@@ -13,6 +13,7 @@ public class SubSection {
                 y = 2.5 - x;
             }
             if(x >= 2 && x < 4){
+
                 y = 2 - 1.5 * (x - 3) * (x - 3);
             }
             if(x >= 4 && x < 6){
