@@ -3,17 +3,18 @@ import java.util.Scanner;
 public class CCF20181202 {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        Long r,y,g, n;
+        long r,y,g, n;
         r = input.nextLong();
         y = input.nextLong();
         g = input.nextLong();
         n = input.nextLong();
 
-        Long sum = 0l;
+        long sum = 0L;
+        long k, t;
+        long tmp;
+        long left = 0L;
         for(int i=0; i<n; i++){
-            Long k, t;
-            Long tmp = sum;
-            Long left = 0l;
+            tmp = sum;
             k = input.nextLong();
             t = input.nextLong();
             if(k == 0){
