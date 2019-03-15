@@ -15,8 +15,12 @@ public class CCF20181203 {
             //System.out.printf("%d.%d.%d.%d/%d", list[0], list[1], list[2], list[3], list[4]);
         }
         ipSort(ip_list);
+
+        int[][] merged_list = new int[m][5];
+        mergeList(ip_list, merged_list);
+
         for(int i=0; i<m; i++){
-            int[] list = ip_list[i];
+            int[] list = merged_list[i];
             System.out.printf("%d.%d.%d.%d/%d\n", list[0], list[1], list[2], list[3], list[4]);
         }
     }
@@ -90,6 +94,41 @@ public class CCF20181203 {
             if(array1[i] > array2[i]){
                 rst = 1;
                 break;
+            }
+        }
+        return rst;
+    }
+
+    public static void mergeList(int[][] array, int[][] rst){
+        int[] flag = new int[array.length];
+        for(int i=0; i<array.length - 1; i++){
+            if(canMerged(array[i], array[i+1])){
+                flag[i+1] = 1;
+                array[i+1] = array[i];
+            }
+        }
+        int count = 0;
+        for(int i=0; i<array.length; i++){
+            if(flag[i] == 0){
+                rst[count] = array[i];
+            }
+        }
+    }
+
+    public static boolean canMerged(int[] array1, int[] array2){
+        boolean rst = true;
+        if(array1[4] > array2[4]){
+            return false;
+        }
+        String tmp1 = "";
+        String tmp2 = "";
+        for(int i=0; i<4; i++){
+            tmp1 += Integer.toBinaryString(array1[i]);
+            tmp2 += Integer.toBinaryString(array2[i]);
+        }
+        for(int i=0; i<array1[4]; i++){
+            if(tmp1.charAt(i) != tmp2.charAt(i)){
+                return false;
             }
         }
         return rst;
