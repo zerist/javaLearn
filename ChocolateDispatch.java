@@ -41,7 +41,7 @@ public class ChocolateDispatch {
             if(num != 0){
                 count++;
                 w[pos1] = 0;
-                w[pos2] = 0;
+                h[pos2] = 0;
                 num = 0;
                 pos1 = 0;
                 pos2 = 0;
