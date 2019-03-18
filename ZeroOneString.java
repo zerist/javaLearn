@@ -30,7 +30,7 @@ public class ZeroOneString {
             }
 
             if(end != text.length() && end != 0){
-                if(text.charAt(end-1) == '0'){
+                if(text.charAt(end) == '0'){
                     count++;
                 }
             }
@@ -54,6 +54,7 @@ public class ZeroOneString {
                 rst = num[i];
             }
         }
+        if(rst == 0) rst = 1;
         System.out.println(rst);
     }
 }
