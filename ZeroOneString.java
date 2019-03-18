@@ -18,7 +18,6 @@ public class ZeroOneString {
                 tmp = tmp + "01";
                 count++;
                 if(i + 2 * count > text.length()){
-                    count--;
                     break;
                 }
             }
