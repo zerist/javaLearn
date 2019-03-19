@@ -10,6 +10,7 @@ public class IndependentStu {
         long p = input.nextLong();
 
         long n = (d - f * x) / (x + p) + f;
-        System.out.println(n);
+        long m = d / x;
+        System.out.println(Math.min(n, m));
     }
 }
