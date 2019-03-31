@@ -1,6 +1,3 @@
-链接：https://www.nowcoder.com/questionTerminal/ab900f183e054c6d8769f2df977223b5
-        来源：牛客网
-
 import java.util.*;
 public class DNAList{
     public static void main(String args[]){
