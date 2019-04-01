@@ -17,5 +17,7 @@ public class DelSameChar {
         for(Character e: n){
             System.out.print(e);
         }
+
+
     }
 }

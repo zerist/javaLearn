@@ -1,41 +1,18 @@
 import java.util.*;
 
 public class Main {
+
+    Date date = new Date(1234567);
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        int r, g, y;
-        int n;
-
-        r = input.nextInt();
-        g = input.nextInt();
-        y = input.nextInt();
-        n = input.nextInt();
-
-        int[] rst = new int[n];
-        for(int i=0; i<n; i++){
-            int k, t;
-            k = input.nextInt();
-            t = input.nextInt();
-
-            if(k == 0){
-                rst[i] = t;
-            }
-            if(k == 1){
-                rst[i] = t;
-            }
-            if(k == 2){
-                rst[i] = t + r;
-            }
-            if(k == 3){
-                rst[i] = 0;
-            }
-        }
-        int sum = 0;
-        for(int i=0; i<n; i++){
-            sum += rst[i];
-        }
-        System.out.println(sum);
+        Main m = new Main();
+        m1(m.date, m);
+        System.out.println(m.date.hashCode());
     }
 
+    public static void m1(Date date1, Main m){
+        System.out.println(date1 == m.date);
+        //date = new Date(7654321);
+        //System.out.println(date.hashCode());
+    }
 }
+
