@@ -2,17 +2,37 @@ import java.util.*;
 
 public class Main {
 
-    Date date = new Date(1234567);
-    public static void main(String[] args) {
-        Main m = new Main();
-        m1(m.date, m);
-        System.out.println(m.date.hashCode());
-    }
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int[] nums = new int[n];
+        for(int i=0; i<n; i++){
+            nums[i] = input.nextInt();
+        }
 
-    public static void m1(Date date1, Main m){
-        System.out.println(date1 == m.date);
-        //date = new Date(7654321);
-        //System.out.println(date.hashCode());
+        HashSet<ArrayList<Integer>> res = new HashSet<>();
+        int tmp = -1;
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                for(int k=j+1; k<n; k++){
+                    tmp = nums[i] + nums[j] + nums[k];
+                    if(tmp == 0){
+                        ArrayList<Integer> t = new ArrayList<>();
+                        t.add(nums[i]);
+                        t.add(nums[j]);
+                        t.add(nums[k]);
+                        Collections.sort(t);
+                        res.add(t);
+                    }
+                }
+            }
+        }
+
+
+
+        for(ArrayList<Integer> p : res){
+            System.out.println(p.get(0) + " " + p.get(1) + " " + p.get(2));
+        }
     }
 }
 
